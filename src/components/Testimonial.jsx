@@ -1,4 +1,4 @@
-import './css/testimonial.css';
+import './css/Testimonial.css';
 import { Carousel } from 'react-bootstrap';
 
 export default function Testimonial() {

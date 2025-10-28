@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Contacts from './pages/Contacts';
 import About from './pages/About';
+import Subscription from './pages/Subscription';
 // import Routers from './routes/AppRoutes';
 
 
@@ -15,6 +16,7 @@ function App() {
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />}></Route>
+        <Route path='subscription' element={<Subscription />}></Route>
         <Route path='about' element={<About />}></Route>
         <Route path="contact" element={<Contacts />}></Route>
       </Routes>
