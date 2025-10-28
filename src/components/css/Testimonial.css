@@ -1,0 +1,11 @@
+.testimonials {
+    background-color: #b1fdb1;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.testimonial {
+    max-width: 600px;
+    margin: auto;
+    font-style: italic;
+}

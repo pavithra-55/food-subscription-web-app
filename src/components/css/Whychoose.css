@@ -1,0 +1,24 @@
+.why-choose {
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.why-choose h2 {
+    margin-bottom: 20px;
+    color: #087608;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.feature {
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+}

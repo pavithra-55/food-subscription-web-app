@@ -1,0 +1,12 @@
+.best-food h2{
+    text-align: center;
+    color: #086708;
+    margin-bottom: 20px;
+}
+
+.food-img{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+}

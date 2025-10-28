@@ -1,0 +1,15 @@
+.faq {
+    background-color: #fafafa;
+    padding: 60px 20px;
+}
+
+.faq-item {
+    max-width: 700px;
+    margin: 15px auto;
+    text-align: left;
+}
+
+.faq-item h4 {
+    margin-bottom: 8px;
+    color: #087608;
+}

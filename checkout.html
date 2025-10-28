@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Checkout</title>
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: #fffaf6;
+            margin: 0;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(90deg, #087600, #087608);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .plans {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 50px 20px;
+        }
+
+        .plan {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            width: 260px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .plan:hover {
+            transform: scale(1.05);
+        }
+
+        .plan h3 {
+            color: #087608;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .btn {
+            background-color: #087608;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #087608;
+        }
+
+        .cart {
+            background-color: #c4f9c4;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 2px solid #98f398;
+        }
+
+        .cart h2 {
+            color: #087608;
+        }
+
+        .cart-content {
+            margin: 20px auto;
+            max-width: 400px;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .checkout {
+            max-width: 400px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+
+        .success {
+            display: none;
+            text-align: center;
+            padding: 30px;
+            background: #c8e6c9;
+            border-radius: 10px;
+            color: #2e7d32;
+            margin: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .plans {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Choose Your Meal Subscription Plan 🍱</h1>
+        <p>Fresh, affordable meals delivered daily — pick your plan below!</p>
+    </header>
+
+    <!-- Subscription Plans -->
+    <section class="plans">
+        <div class="plan">
+            <h3>Trial Plan</h3>
+            <p>Perfect for first-time users</p>
+            <div class="price">₹199 / 3 Days</div>
+            <button class="btn" onclick="addToCart('Trial Plan', 199)">Add to Cart</button>
+        </div>
+
+        <div class="plan">
+            <h3>Weekly Plan</h3>
+            <p>Ideal for busy weekdays</p>
+            <div class="price">₹599 / 7 Days</div>
+            <button class="btn" onclick="addToCart('Weekly Plan', 599)">Add to Cart</button>
+        </div>
+
+        <div class="plan">
+            <h3>Monthly Saver</h3>
+            <p>Save ₹200 on this plan</p>
+            <div class="price">₹2299 / 30 Days</div>
+            <button class="btn" onclick="addToCart('Monthly Saver', 2299)">Add to Cart</button>
+        </div>
+    </section>
+
+    <!-- Cart Section -->
+    <section class="cart" id="cart-section">
+        <h2>Your Cart</h2>
+        <div class="cart-content" id="cart-content">
+            <p>No items added yet.</p>
+        </div>
+    </section>
+
+    <!-- Checkout Form -->
+    <section class="checkout" id="checkout-section" style="display:none;">
+        <h2>Checkout</h2>
+        <form id="checkout-form" onsubmit="handlePayment(event)">
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="Email Address" required>
+            <button type="submit" class="btn">Pay Now</button>
+        </form>
+    </section>
+
+    <!-- Dummy Payment Success Message -->
+    <div class="success" id="payment-success">
+        <h2>🎉 Payment Successful!</h2>
+        <p>Thank you for subscribing. Your plan has been activated.</p>
+    </div>
+
+    <script>
+        let cart = null;
+
+        function addToCart(planName, price) {
+            cart = { name: planName, price: price };
+            document.getElementById('cart-content').innerHTML = `
+      <p><strong>${planName}</strong></p>
+      <p>Price: ₹${price}</p>
+      <button class="btn" onclick="proceedToCheckout()">Proceed to Checkout</button>
+    `;
+        }
+
+        function proceedToCheckout() {
+            document.getElementById('checkout-section').style.display = 'block';
+            window.scrollTo({ top: document.getElementById('checkout-section').offsetTop, behavior: 'smooth' });
+        }
+
+        function handlePayment(event) {
+            event.preventDefault();
+
+            // Dummy Payment Simulation
+            document.getElementById('checkout-section').style.display = 'none';
+            document.getElementById('cart-section').style.display = 'none';
+            document.getElementById('payment-success').style.display = 'block';
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+:root{
+--angle: 45deg;
+--opacity: 0.5;
+}
+.about-content{
+    
+    padding: 60px 20px;
+}
+.about-content h1{
+    
+    text-align: center;
+    color: #087608;
+}
+.about-para{
+    margin: 20px;
+    padding: 20px;
+}
+.about-slogan{
+    position: relative;
+    color: #087608;
+    background-color: #73fa73;
+    font-size: 50px;
+    font-family: "Lucida Handwriting", cursive;
+    --border-size: 0.3rem;
+    border: var(--border-size) solid transparent;
+    border-image: conic-gradient(from var(--angle),
+                #086708 0deg 90deg,
+                #1cff1c 90deg 180deg,
+                #086708 180deg 270deg,
+                #1cff1c 270deg 360deg) 1 stretch;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5em;
+    animation: rotate 4s linear infinite,
+        opacityChange 3s infinite alternate;
+
+}
+@keyframes rotate {
+    to {
+        --angle: 180deg;
+    }
+}
+@keyframes opacityChange {
+    to {
+        --opacity: 1;
+    }
+}
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+@property --opacity {
+    syntax: "<number>";
+    initial-value: 0.5;
+    inherits: false;
+}

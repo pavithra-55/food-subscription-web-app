@@ -1,0 +1,23 @@
+.navbar-brand{
+    color: #086706;
+    font-weight: bold;
+}
+.navbar .nav-link {
+    color: #086706;
+    position: relative;
+}
+
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+    font-weight: 500;
+    color: #cfe3ff;
+    background-color:#086706; 
+    position: relative;
+    border-radius: 8px 0 8px 0;
+    transition: 2s ease;
+}
+
+
+.navbar-toggler {
+    background: #cfe3ff;
+}
