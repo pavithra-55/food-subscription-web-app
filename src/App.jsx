@@ -11,7 +11,7 @@ import About from './pages/About';
 
 function App() {
   return (
-    <BrowserRouter basename="/food-subscription-web-app">
+    <BrowserRouter>
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />}></Route>
