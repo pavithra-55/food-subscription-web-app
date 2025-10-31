@@ -24,7 +24,7 @@ export default function Register() {
       alert("❌ Passwords do not match. Please re-enter correctly.");
     }
     
-  }
+  };
 
  
   return (
@@ -57,7 +57,7 @@ export default function Register() {
             <Button style={{backgroundColor:"#086706"}} type="submit" className="w-100">Register</Button>
           </Form>
             <p className="text-center">
-              Already have an account? <a href="/login" style={{color:'#086708', fontWeight:"bold"}}>Register</a>
+              Already have an account? <a href="/login" style={{color:'#086708', fontWeight:"bold"}}>Login</a>
             </p>
         </Col>
         <Col style={{borderLeft: '2px solid #086708',height: '500px',}}  md='4'>
