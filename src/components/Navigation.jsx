@@ -1,7 +1,7 @@
 
 import { Container, Nav, Navbar, } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-import Logo from '../assets/img/logo.png';
+import Logo from '../assets/img/logo-yf.png';
 import './css/Navigation.css';
 import {  useState } from "react";
 
@@ -15,8 +15,8 @@ function Navigation() {
         <Navbar className="navbar shadow" expand="lg" fixed="top" bg="light" expanded={expended} onToggle={()=>setExpended(!expended)}>
             <Container>
                 <Navbar.Brand as={NavLink} to="/">
-                    {/* <img src={Logo} alt="logo" width={150} height={80}/> */}
-                    Yugan Foods
+                    <img src={Logo} alt="logo" width={100} height={70}/>
+                    {/* Yugan Foods */}
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbar-nav" />
                 <Navbar.Collapse id="navbar-nav">
@@ -25,7 +25,7 @@ function Navigation() {
                         <Nav.Link as={NavLink} onClick={handleNavLinkClick} to='/subscription'>Subscription</Nav.Link>
                         <Nav.Link as={NavLink} onClick={handleNavLinkClick} to="/about">About</Nav.Link>
                         <Nav.Link as={NavLink} onClick={handleNavLinkClick} to="/contact">Contact</Nav.Link>
-                        <Nav.Link as={NavLink} onClick={handleNavLinkClick} to="/login">Login/Register</Nav.Link>
+                        <Nav.Link as={NavLink} onClick={handleNavLinkClick} to="/login">Login</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
