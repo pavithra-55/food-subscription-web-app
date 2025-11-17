@@ -18,11 +18,11 @@ export default function Login() {
     if (user && user.email === email && user.password === password) {
       localStorage.setItem("isLoggedIn", true);
       alert("Login Successfully!");
-      navigate('/');
+      navigate('/candidate');
     } else {
       alert("Invalid email or password! please try again");
-      setEmail("")
-    setPassword("")
+      setEmail("");
+      setPassword("");
     }
     
   }
