@@ -1,7 +1,8 @@
 
-import { Button, Container, Nav, Navbar, } from "react-bootstrap";
+import { Button, Container, Dropdown, Nav, Navbar } from "react-bootstrap";
 import { NavLink, useNavigate } from "react-router-dom";
 import Logo from '../assets/img/logo-yf.png';
+import User from '../assets/img/user.png';
 import './css/Navigation.css';
 import {  useState } from "react";
 
@@ -32,16 +33,26 @@ function Navigation() {
                         <Nav.Link as={NavLink} onClick={handleNavLinkClick} to='/subscription'>Subscription</Nav.Link>
                         <Nav.Link as={NavLink} onClick={handleNavLinkClick} to="/about">About</Nav.Link>
                         <Nav.Link as={NavLink} onClick={handleNavLinkClick} to="/contact">Contact</Nav.Link>
-                        {isLoggedIn && (
+                        {/* {isLoggedIn && (
                             <Nav.Link as={NavLink} to="/candidate">
                                 Candidate
                             </Nav.Link>
-                        )}
+                        )} */}
+                        
                         
                         {!isLoggedIn ?(
                             <Nav.Link as={NavLink} onClick={handleNavLinkClick} to="/login">Login</Nav.Link>
                         ) : (
-                                <Button variant="outline-danger" onClick={handleLogout}>Logout</Button>
+                                // <Button variant="outline-danger" onClick={handleLogout}>Logout</Button>
+                                <Dropdown>
+                                    <Dropdown.Toggle style={{backgroundColor:'#087608'}} id="dropdown-basic">
+                                        <img src={User} width='20' height='20' style={{ backgroundColor: '#087608'}} /> Account
+                                    </Dropdown.Toggle>
+                                    <Dropdown.Menu >
+                                        <Dropdown.Item href="/candidate">Candidate</Dropdown.Item>
+                                        <Dropdown.Item onClick={handleLogout}>Logout</Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown>
                         )}
                     </Nav>
                 </Navbar.Collapse>

@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Form, Button, Card } from "react-bootstrap";
 import Banner from "../components/Banner";
+import './css/Candidate.css';
 
 const Candidate = () => {
   const [candidate, setCandidate] = useState({
     name: "",
     email: "",
+    address:"",
     subscription: "Monthly",
   });
 
@@ -15,12 +17,14 @@ const Candidate = () => {
       setCandidate({
         name: storedUser.name,
         email: storedUser.email,
+        address: storedUser.address,
         subscription: storedUser.subscription || "Monthly",
       });
     }
   }, []);
 
   const handleChange = (e) => {
+   
     setCandidate({ ...candidate, [e.target.name]: e.target.value });
   };
 
@@ -32,9 +36,9 @@ const Candidate = () => {
 
   return (
     <>
-      <Banner />
-    <div className="d-flex justify-content-center align-items-center vh-100 bg-light">
-      <Card className="p-4 shadow-lg" >
+      
+    <div className="mt-3 pt-3 container-fluid d-flex justify-content-center align-items-center vh-100 bg-light">
+      <Card className="p-4 shadow-lg bg-dark text-light" >
         <h3 className="text-center mb-3">Candidate Details</h3>
         <Form onSubmit={handleSave}>
           <Form.Group className="mb-3">
@@ -55,6 +59,11 @@ const Candidate = () => {
               value={candidate.email}
               onChange={handleChange}
             />
+          </Form.Group>
+            
+          <Form.Group className="mb-3">
+            <Form.Label>Address</Form.Label>
+            <Form.Control as="textarea" rows={3} name="address" value={candidate.address} onChange={handleChange}/>
           </Form.Group>
 
           <Form.Group className="mb-3">
