@@ -41,9 +41,10 @@ const Plan = () => {
   
   return (
     <div className='mt-5' id='plan'>
-     <div className='container'>
+     
        <h2 className='mb-4'>Choose a Plan</h2>
       <p className='sunday-leave'>** All Sundays are leave **</p>
+      <div className='container py-5'>
       <div className='row border p-4 rounded'>
         <div className='col-md-4'>
           {/* plan */}
