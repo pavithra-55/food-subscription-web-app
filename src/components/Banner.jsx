@@ -4,12 +4,14 @@ import Banner1 from '../assets/img/banner-8.jpg';
 import Banner2 from '../assets/img/banner-6.jpg';
 import Banner3 from '../assets/img/banner-7.jpg';
 
+
 const Banner = () => {
   const BannerImage = [
     { id: 1, image: Banner1, title: "Eat Healthy", desc: "Delicious tiffins delivered daily" },
     { id: 2, image: Banner2, title: "Fast Delivery", desc: "Hot meals right on time" },
     { id: 3, image: Banner3, title: "Stay Healthy", desc: "Eat fresh, stay energized" }
   ];
+  
 
   return (
     <section id="banner" className="mt-5 text-white">

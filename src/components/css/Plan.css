@@ -1,0 +1,23 @@
+#subscriptionSection{
+    width: 100%;
+}
+
+#plan{
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 10px;
+    padding-top: 3rem !important;
+    
+}
+
+#plan h2{
+    text-align: center;
+    background-color: #086708;
+    color: #fff;
+    margin-bottom: 20px;
+    padding: 1rem;
+}
+#plan .sunday-leave{
+    text-align: center;
+    color: red;
+}
